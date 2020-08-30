@@ -3,8 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const htmlPlugin = new HtmlWebpackPlugin({
     template: "./src/index.html",
     filename: "./index.html"
-})
-
+});
 
 module.exports = {
   entry: './src/index.js',
@@ -27,11 +26,18 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-           'file-loader',
-        ],
-       },
+        test: /\.(jpeg|png|svg|jpg|gif)$/i,
+        //use: ['file-loader'],
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'images',
+          publicPath: 'images',
+          emitFile: true,
+          esModule: false
+        }
+        
+      },
     ],
   },
   devServer: {
