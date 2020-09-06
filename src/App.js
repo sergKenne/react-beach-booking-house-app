@@ -6,14 +6,14 @@ import SingleRoom from './pages/SingleRoom';
 import Rooms from './pages/Rooms';
 import Navbar from './components/Navbar'
 import { Switch, Route } from 'react-router-dom';
-import {Provider} from './context';
+import {RoomProvider} from './context';
 
 class App extends Component {
   
 
   render() {
     return (
-      <Provider>
+      <RoomProvider>
         <>
           <Navbar />
           <Switch>
@@ -23,7 +23,7 @@ class App extends Component {
             <Route component={Error} />
           </Switch>
         </>
-      </Provider>
+      </RoomProvider>
     );
   }
 }
