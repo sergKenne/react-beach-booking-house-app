@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
 export const roomsContext = React.createContext(); 
-export const Consumer = roomsContext.Consumer;
+export const RoomConsumer = roomsContext.Consumer;
 import items from './data'
 
-export class Provider extends Component {
+export class RoomProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,6 +12,15 @@ export class Provider extends Component {
             sortedRooms: [],
             featuredRooms: [],
             loading: true,
+            type: "all",
+            capacity: 1,
+            price: 0,
+            minPrice: 0,
+            maxPrice: 0,
+            minSize: 0,
+            maxSize: 0,
+            breakfast: false,
+            pets: false
         };
     }
 
@@ -33,11 +42,11 @@ export class Provider extends Component {
         let tempItems = items.map(item => {
             let id = item.sys.id;
             let images = item.fields.images.map(image => {
-                return image.fields.file.url
+                return image.fields.file.url;
             });
-            let room = { ...item.fields, id, images }
-            return room
-        })
+            let room = { ...item.fields, images, id }
+            return room;
+        });
 
         return tempItems;
     }

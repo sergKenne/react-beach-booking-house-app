@@ -1,13 +1,15 @@
 import React from 'react';
+import defaultBcg from '../images/defaultBcg.jpeg';
 import Hero from '../components/Hero'
 import Banner from '../components/Banner'
 import { Link } from 'react-router-dom';
 import Services from '../components/Services';
 import FeatureRooms from '../components/FeatureRooms';
+import StyledHero from '../components/StyledHero'
 const Home = () => {
   return (
     <>  
-        <Hero hero="defaultHero">
+        <StyledHero img={`../${defaultBcg}`}>
             <Banner 
                 title="Luxurious Rooms"
                 subtitle="deluxe rooms starting at $299"
@@ -16,7 +18,7 @@ const Home = () => {
                     our Rooms
                 </Link>
             </Banner>
-        </Hero>
+        </StyledHero>
         <Services/>
         <FeatureRooms/>
     </>
