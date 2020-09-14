@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import RoomsContainer from '../components/RoomsContainer';
 import StyledHero from '../components/StyledHero'
 
-
 const Rooms = () => {
     return (
       <>
