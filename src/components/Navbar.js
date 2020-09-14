@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <img src={logo} alt="Beach Resort" />
+            <img src={`../${logo}`} alt="Beach Resort" />
           </Link>
           <button type="button" className="nav-btn" onClick={handleToggle}>
             <FaAlignRight className="nav-icon" />

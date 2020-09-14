@@ -1,6 +1,5 @@
-import React, {useContext} from 'react'
+import React, {useState, useContext} from 'react'
 import {RoomConsumer} from '../context';
-import title from './Title'
 import Title from './Title';
 
 
@@ -18,6 +17,7 @@ const getUniqueTypeValue = (rooms, type) => {
 
 const RoomsSearch = ({rooms}) => {
     console.log("searchRoom:", rooms);
+
     return (
         <RoomConsumer>
             { value => {
@@ -32,6 +32,7 @@ const RoomsSearch = ({rooms}) => {
                     maxSize, 
                     breakfast, 
                     pets } = value;
+
 
                 return (
                     <section className="filter-container">
@@ -68,9 +69,16 @@ const RoomsSearch = ({rooms}) => {
                             
                             <div className="form-group">
                                 <label htmlFor="price">room price ${price}</label>
-                                <input type="range" name="price" min={minPrice}
-                                maxPrice={maxPrice} id="price" value={price} 
-                                onChange={handleChange} className="form-control" />
+                                <input 
+                                    type="range" 
+                                    name="price" 
+                                    min={minPrice}
+                                    max={maxPrice} 
+                                    id="price" 
+                                    value={price} 
+                                    onChange={handleChange} 
+                                    className="form-control"
+                                />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="price">room size </label>
@@ -79,6 +87,7 @@ const RoomsSearch = ({rooms}) => {
                                         type="number"
                                         name="minSize"
                                         value={minSize}
+                                        min={minSize}
                                         onChange={handleChange}
                                         className="size-input"
                                     />
