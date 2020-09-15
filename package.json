@@ -16,15 +16,7 @@
   },
   "author": "Serge Kenne",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "express-favicon": "^2.0.1",
-    "path": "^0.12.7",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-icons": "^3.11.0",
-    "react-router-dom": "^5.2.0",
-    "styled-components": "^5.1.1",
+  "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/preset-env": "^7.11.0",
@@ -37,5 +29,15 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
+    "path": "^0.12.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.1.1"
   }
 }
